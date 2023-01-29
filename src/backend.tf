@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    bucket         = "<REPLACE_WITH_YOUR_REMOTESTATE_BUCKETNAME>"
-    dynamodb_table = "<REPLACE_WITH_YOUR_DYNAMODB_TABLENAME>"
-    key            = "terraform-aws-eks-workshop.tfstate"
-    region         = "us-west-1"
+    bucket         = "terraform-state-bucket-leon"
+    dynamodb_table = "terraform-lock"
+    key            = "terraform-aws-eks" ## this needs to be changed per region
+    region         = "us-east-2"         // this is the bucket tfm-sec-state bucket is
     encrypt        = true
   }
 }
